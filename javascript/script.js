@@ -3,11 +3,9 @@ import { fuzzyMatch, formatUrl } from "./helpers.js";
 let logConsoleMessage = () => {
   console.log(
     "%c👋 Hey there" +
-      "\n\n%cLooks like you're poking around in the console. Why not add your site to the webring?" +
-      "\n\n%c→ https://github.com/JusGu/uwatering",
+      "\n\n%cLooks like you're poking around in the console. Why not add your site to the webring?",
     "font-size: 18px; font-weight: bold; color: #FF3366;",
-    "font-size: 14px; color: #00FF00;",
-    "font-size: 14px; color: #3399FF; text-decoration: underline;"
+    "font-size: 14px; color: #00FF00;"
   );
 };
 let createWebringList = (matchedSiteIndices) => {
@@ -25,7 +23,7 @@ let createWebringList = (matchedSiteIndices) => {
       matchedSiteIndices.includes(index) &&
       matchedSiteIndices.length !== webringData.sites.length;
     if (isSearchItem) {
-      listItem.className += " bg-mustard-500";
+      listItem.className += " bg-gray-800";
     }
 
     if (firstHighlightedItem === null && isSearchItem) {
@@ -36,14 +34,18 @@ let createWebringList = (matchedSiteIndices) => {
     name.className = "col-span-5 sm:col-span-3 font-latinRomanCaps truncate";
     name.textContent = site.name;
     if (isSearchItem) {
-      name.className += " text-mustard-100"
+      name.className += " text-white"
+    } else {
+      name.className += " text-white"
     }
 
     const year = document.createElement("span");
     year.className = "col-span-2 sm:col-span-1 text-right font-latinRoman";
     year.textContent = site.year;
     if (isSearchItem) {
-      year.className += " text-mustard-100"
+      year.className += " text-white"
+    } else {
+      year.className += " text-white"
     }
 
     const link = document.createElement("a");
@@ -52,9 +54,9 @@ let createWebringList = (matchedSiteIndices) => {
       "col-span-5 sm:col-span-2 font-latinMonoRegular underline truncate";
     link.textContent = displayUrl;
     if (isSearchItem) {
-      link.className += " text-mustard-100"
+      link.className += " text-white"
     } else {
-      link.className += " text-mustard-500"
+      link.className += " text-gray-400 hover:text-gray-300"
     }
 
     listItem.appendChild(name);
@@ -94,8 +96,8 @@ function filterWebring(searchTerm) {
   createWebringList(matchedSiteIndices);
 }
 let navigateWebring = () => {
-  // https://cs.uwatering.com/#your-site-here?nav=next OR
-  // https://cs.uwatering.com/#your-site-here?nav=prev
+  // http://localhost:8000/#your-site-here?nav=next OR
+  // http://localhost:8000/#your-site-here?nav=prev
   const fragment = window.location.hash.slice(1); // #your-site-here?nav=
   if (!fragment.includes("?")) return;
 
@@ -124,7 +126,7 @@ let navigateWebring = () => {
   if (!webringData.sites[newIndex]) return;
 
   document.body.innerHTML = `
-  <main class="p-6 min-h-[100vh] w-[100vw] text-black-900">
+  <main class="p-6 min-h-[100vh] w-[100vw] bg-black-900 text-white">
     <p class="font-latinMonoCondOblique">redirecting...</p>
   </main>
   `;

@@ -1,11 +1,8 @@
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/JusGu/uwatering.svg)
-[![W3C Validation - https://validator.nu/](https://img.shields.io/w3c-validation/default?targetUrl=https%3A%2F%2Fcs.uwatering.com%2F&label=w3c%20check)](https://validator.nu/?doc=https%3A%2F%2Fcs.uwatering.com%2F)
-![GitHub stars](https://img.shields.io/github/stars/JusGu/uwatering.svg?style=social)
 
 <figure>
   <img src="./webAssets//og.png" alt="Thumbnail logo">
   <figcaption style="text-align: center; font-style: italic;">
-    A webring for Computer Science students and alumni at the University of Waterloo in Ontario, Canada. If you're one of us, we welcome you with open arms. Visit our live site <a href="https://cs.uwatering.com">here</a>.
+    A webring for Computer Science students and alumni at the University of Waterloo in Ontario, Canada. If you're one of us, we welcome you with open arms.
   </figcaption>
 </figure>
 
@@ -32,11 +29,11 @@ Since every website is unique, we suggest you add your own flair to the lion. We
 
 ```html
 <div style="display: flex; align-items: center; gap: 8px;">
-    <a href="https://cs.uwatering.com/#your-site-here?nav=prev">←</a>
-    <a href="https://cs.uwatering.com/#your-site-here" target="_blank">
-        <img src="https://cs.uwatering.com/icon.black.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/>
+    <a href="http://localhost:8000/#your-site-here?nav=prev">←</a>
+    <a href="http://localhost:8000/#your-site-here" target="_blank">
+        <img src="./icon.black.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/>
     </a>
-    <a href="https://cs.uwatering.com/#your-site-here?nav=next">→</a>
+    <a href="http://localhost:8000/#your-site-here?nav=next">→</a>
 </div>
 <!-- Replace 'your-site-here' with your actual site URL -->
 ```
@@ -45,15 +42,15 @@ Since every website is unique, we suggest you add your own flair to the lion. We
 
 ```jsx
 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-    <a href='https://cs.uwatering.com/#your-site-here?nav=prev'>←</a>
-    <a href='https://cs.uwatering.com/#your-site-here' target='_blank'>
+    <a href='http://localhost:8000/#your-site-here?nav=prev'>←</a>
+    <a href='http://localhost:8000/#your-site-here' target='_blank'>
         <img
-            src='https://cs.uwatering.com/icon.black.svg'
+            src='./icon.black.svg'
             alt='CS Webring'
             style={{ width: '24px', height: 'auto', opacity: 0.8 }}
         />
     </a>
-    <a href='https://cs.uwatering.com/#your-site-here?nav=next'>→</a>
+    <a href='http://localhost:8000/#your-site-here?nav=next'>→</a>
 </div>
 // Replace 'your-site-here' with your actual site URL
 ```
@@ -62,9 +59,9 @@ For dark-themed websites, use `icon.white.svg`. Feel free to host the icon local
 
 ## Alternative Icons Sources
 
-- Black: `https://cs.uwatering.com/icon.black.svg`
-- White: `https://cs.uwatering.com/icon.white.svg`
-- Red: `https://cs.uwatering.com/icon.red.svg`
+- Black: `./icon.black.svg`
+- White: `./icon.white.svg`
+- Red: `./icon.red.svg`
 
 If none of these quite work for you, feel free to make your own. If you're using React, start with [icon.custom.tsx](./icon.custom.tsx).
 

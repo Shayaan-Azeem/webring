@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webring Widget Test</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    .widget-demo {
+      margin: 30px 0;
+      padding: 20px;
+      border: 2px dashed #ccc;
+      border-radius: 8px;
+    }
+    .widget-demo h3 {
+      margin-top: 0;
+    }
+    .webring-widget {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 20px 0;
+    }
+    .webring-widget a {
+      text-decoration: none;
+      color: #333;
+      font-size: 18px;
+    }
+    .webring-widget img {
+      width: 24px;
+      height: auto;
+      opacity: 0.8;
+    }
+    .webring-widget a:hover {
+      opacity: 0.7;
+    }
+    .dark-bg {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .dark-bg .webring-widget a {
+      color: #fff;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-family: 'Courier New', monospace;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>🧪 Webring Widget Test Page</h1>
+  
+  <p>This page demonstrates how to add the webring widget to your website. Replace <code>your-site-here</code> with your actual website URL.</p>
+
+  <div class="widget-demo">
+    <h3>Light Theme Widget (using icon.black.svg)</h3>
+    <div class="webring-widget">
+      <a href="http://localhost:8000/#your-site-here?nav=prev">←</a>
+      <a href="http://localhost:8000/#your-site-here" target="_blank">
+        <img src="./icon.black.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/>
+      </a>
+      <a href="http://localhost:8000/#your-site-here?nav=next">→</a>
+    </div>
+    
+    <pre><code>&lt;div style="display: flex; align-items: center; gap: 8px;"&gt;
+    &lt;a href="http://localhost:8000/#your-site-here?nav=prev"&gt;←&lt;/a&gt;
+    &lt;a href="http://localhost:8000/#your-site-here" target="_blank"&gt;
+        &lt;img src="./icon.black.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/&gt;
+    &lt;/a&gt;
+    &lt;a href="http://localhost:8000/#your-site-here?nav=next"&gt;→&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+
+  <div class="widget-demo">
+    <h3>Dark Theme Widget (using icon.white.svg)</h3>
+    <div class="dark-bg">
+      <div class="webring-widget">
+        <a href="http://localhost:8000/#your-site-here?nav=prev">←</a>
+        <a href="http://localhost:8000/#your-site-here" target="_blank">
+          <img src="./icon.white.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/>
+        </a>
+        <a href="http://localhost:8000/#your-site-here?nav=next">→</a>
+      </div>
+    </div>
+    
+    <pre><code>&lt;div style="display: flex; align-items: center; gap: 8px;"&gt;
+    &lt;a href="http://localhost:8000/#your-site-here?nav=prev"&gt;←&lt;/a&gt;
+    &lt;a href="http://localhost:8000/#your-site-here" target="_blank"&gt;
+        &lt;img src="./icon.white.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/&gt;
+    &lt;/a&gt;
+    &lt;a href="http://localhost:8000/#your-site-here?nav=next"&gt;→&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+  </div>
+
+  <div class="widget-demo">
+    <h3>Red Theme Widget (using icon.red.svg)</h3>
+    <div class="webring-widget">
+      <a href="http://localhost:8000/#your-site-here?nav=prev">←</a>
+      <a href="http://localhost:8000/#your-site-here" target="_blank">
+        <img src="./icon.red.svg" alt="CS Webring" style="width: 24px; height: auto; opacity: 0.8;"/>
+      </a>
+      <a href="http://localhost:8000/#your-site-here?nav=next">→</a>
+    </div>
+  </div>
+
+  <h2>📝 Instructions</h2>
+  <ol>
+    <li><strong>For local testing:</strong> Use <code>http://localhost:8000</code> (or whatever port your server uses)</li>
+    <li><strong>For production:</strong> Replace with your production domain</li>
+    <li><strong>Replace <code>your-site-here</code></strong> with your actual website URL (e.g., <code>https://yourname.com</code>)</li>
+    <li>Choose the icon color that matches your website's theme</li>
+  </ol>
+
+  <h2>🚀 Testing Locally</h2>
+  <p>To test the webring locally, start a local server:</p>
+  <pre><code># Using Python 3
+python3 -m http.server 8000
+
+# Using Node.js (if you have http-server installed)
+npx http-server -p 8000
+
+# Using PHP
+php -S localhost:8000</code></pre>
+  <p>Then open <code>http://localhost:8000</code> in your browser to see the main webring page, and <code>http://localhost:8000/test-widget.html</code> to see this test page.</p>
+</body>
+</html>
+
