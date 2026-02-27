@@ -180,7 +180,7 @@ async function checkMemberWebsite(
     }
 
     const contentType = response.headers.get('content-type')?.toLowerCase() || '';
-    if (contentType && !contentType.includes('text/html')) {
+    if (contentType && !contentType.includes('text/html') && !contentType.includes('application/xhtml+xml')) {
       return {
         id: member.id,
         name: member.name,
